@@ -69,7 +69,7 @@ class updated_gspread():
 
         totalResponses = int(wks.cell(thatQnsCell.row, 8).value)
         totalResponses += 1
-        print("Total number of responses - " + str(totalResponses))
+        #print("Total number of responses - " + str(totalResponses))
         wks.update_cell(thatQnsCell.row, 8, totalResponses)
 
     def add_elab(self,quiz_id,add_elab):
@@ -96,7 +96,7 @@ class updated_gspread():
                 signal=1 ## flag thaT there is such quiz_id in the column
                 if int(chat_id)==int(creator_id): ## check if the user is the creator of query
                     try:
-                        print("creator of /query"+quiz_id+" has requested to view responses.")
+                        #print("creator of /query"+quiz_id+" has requested to view responses.")
                         responses=[]
                         totalResponses=int(wks.cell(updatingCell.row, 8).value)
                         responses.append(totalResponses)

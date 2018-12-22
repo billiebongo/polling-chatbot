@@ -65,7 +65,7 @@ class YayOrNay(telepot.helper.ChatHandler):
         if command=='/viewresponses':
             bot.sendMessage(chat_id, "Please wait while I retrieve your queries.")
             createdquizzes=onchat_object.retrieve_quizzes_i_created(chat_id)
-            print(createdquizzes)
+            #print(createdquizzes)
             quiz_str='Click to view responses'
             for quiz in createdquizzes:
                 quiz_str=quiz_str+"\n"+" /responses"+quiz
@@ -133,7 +133,7 @@ class YayOrNay(telepot.helper.ChatHandler):
         if command[:9]=="/addphoto":
             tag=command[9:12]+"photo"
             self.quizzes_done.append(tag)
-            print(self.quizzes_done)
+            #print(self.quizzes_done)
             bot.sendMessage(chat_id, "Please send only one photo.")
         if content_type=='photo':
 
@@ -146,7 +146,7 @@ class YayOrNay(telepot.helper.ChatHandler):
                         qns=str(wks.cell(wcell.row, 3).value) #retrieves qns as string for that quiz_id
                         msg_id=msg['message_id']
                         qns=qns+"__PHOTO__"+str(chat_id)+"__PHOTO__"+str(msg_id) #attaching message id of forwarded photo to the question
-                        print(qns) #testing purposes /acheckpoint
+                        #print(qns) #testing purposes /acheckpoint
                         break
                 self.quizzes_done.append("added")
                 wks.update_cell(row, 3, qns)
